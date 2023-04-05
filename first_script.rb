@@ -1,0 +1,2 @@
+puts "Hellom Word"
+exit
