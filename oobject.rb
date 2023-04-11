@@ -1,28 +1,30 @@
-class Student
-    def set_name=(student_name)
-        @name = student_name
+class Ferret
+ 
+	def set_name =(ferret_name)
+		@name = ferret_name
     end
-    def get_name
-        return @name
-    end
-    def set_class=(class_name)
-        @class = class_name
-    end
-    def get_class
-        return @class
-    end
-    def set_grade=(grade)
-        @grade = grade
-    end
-    def get_grade
-        return @grade
-    end
-    def quote
-        return "Nothing to quote"
-    end
-end
+ 
+	# def get_name
+	# 	return @name
+	# end
+ 
+	# def set_owner=(owner_name)
+	# 	@owner_name = owner_name
+	# end
+ 
+	# def get_owner
+	# 	return @owner_name
+	# end
+ 
+	# def squeal
+	# 	return "squeeeeee"
+	# end
+end 
 
-my_student = Student.new
-my_student.set_name="John"
-my_student_name = my_student.get_name
-puts ("#{my_student_name} says #{my_student.quote}")
+
+# my_ferret = Ferret.new
+# my_ferret.set_name= "Fredo"
+# ferretname = my_ferret.get_name
+ 
+ 
+# puts my_ferret.inspect
