@@ -2,7 +2,7 @@ require "prawn"
 bingoArray =[
 b_col = (1..15).to_a.sample(5),
 i_col = (16..30).to_a.sample(5),
-n_col = (31..45).to_a.sample(5),
+n_col = (31..45).to_a.sample(4),
 g_col = (46..60).to_a.sample(5),
 o_col = (61..75).to_a.sample(5)]
 def align(num)
@@ -43,10 +43,30 @@ Prawn::Document.generate("card.pdf") do
 
     end
     bingoArray.each_with_index do |array, aIndex|
-        array.each_with_index do |num, i|
-            grid((i+1), aIndex).bounding_box do
+        if array.length == 4
+            grid(3, aIndex).bounding_box do
                 stroke_bounds
-                text num.to_s, align: :center, valign: :center, size:50, style: :bold
+                text 'F', align: :center, valign: :center, size:50, style: :bold
+            end
+            array.each_with_index do |num, i|
+                if i >1
+                    grid((i+2), aIndex).bounding_box do
+                        stroke_bounds
+                        text num.to_s, align: :center, valign: :center, size:50, style: :bold
+                    end  
+                else
+                    grid((i+1), aIndex).bounding_box do
+                        stroke_bounds
+                        text num.to_s, align: :center, valign: :center, size:50, style: :bold
+                    end                    
+                end
+            end
+        else
+            array.each_with_index do |num, i|
+                grid((i+1), aIndex).bounding_box do
+                    stroke_bounds
+                    text num.to_s, align: :center, valign: :center, size:50, style: :bold
+                end
             end
         end
     end
